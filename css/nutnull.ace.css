@@ -1,0 +1,12 @@
+/*
+     @package nutnull-premium-theme
+*/
+
+#customCss {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+}
+.form-table th {
+    display: none;
+}

@@ -1,0 +1,12 @@
+// adding a new file in the theme repos
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/marvin-ramos/nutnul-premium-theme.git
+git push -u origin main
+
+//pushing the updated file in the repos
+git remote add origin https://github.com/marvin-ramos/nutnul-premium-theme.git
+git branch -M main
+git push -u origin main
