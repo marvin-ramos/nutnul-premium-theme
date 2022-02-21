@@ -24,36 +24,48 @@
 
 				<!-- for nutnull company social media icons -->
 				<div class="icons-wrapper">
-					<button class="btn-social-media-icon">
-						<a href="mailto:'.<?php print $companyEmail; ?>.'">
-							<i class="icofont-email"></i>
-						</a>
-					</button>
-					<button class="btn-social-media-icon">
-						<a href="">
-							<i class="icofont-phone"></i>
-						</a>
-					</button>	
-					<button class="btn-social-media-icon">
-						<a href="">
-							<i class="icofont-twitter"></i>
-						</a>
-					</button>
-					<button class="btn-social-media-icon">
-						<a href="">
-							<i class="icofont-facebook"></i>
-						</a>
-					</button>
-					<button class="btn-social-media-icon">
-						<a href="">	
-							<i class="icofont-instagram"></i>
-						</a>
-					</button>	
-					<button class="btn-social-media-icon">
-						<a href="">	
-							<i class="icofont-google-plus"></i>
-						</a>
-					</button>			
+					<?php if( !empty( $companyEmail ) ): ?>
+						<button class="btn-social-media-icon">
+							<a href="mailto:'.<?php print $companyEmail; ?>.'">
+								<i class="icofont-email"></i>
+							</a>
+						</button>
+					<?php endif; ?>
+					<?php if( !empty( $companyEmail ) ): ?>
+						<button class="btn-social-media-icon">
+							<a href="">
+								<i class="icofont-phone"></i>
+							</a>
+						</button>
+					<?php endif; ?>
+					<?php if( !empty( $companyEmail ) ): ?>
+						<button class="btn-social-media-icon">
+							<a href="">
+								<i class="icofont-twitter"></i>
+							</a>
+						</button>
+					<?php endif; ?>
+					<?php if( !empty( $companyEmail ) ): ?>
+						<button class="btn-social-media-icon">
+							<a href="">
+								<i class="icofont-facebook"></i>
+							</a>
+						</button>
+					<?php endif; ?>
+					<?php if( !empty( $companyEmail ) ): ?>
+						<button class="btn-social-media-icon">
+							<a href="">	
+								<i class="icofont-instagram"></i>
+							</a>
+						</button>
+					<?php endif; ?>
+					<?php if( !empty( $companyEmail ) ): ?>
+						<button class="btn-social-media-icon">
+							<a href="">	
+								<i class="icofont-google-plus"></i>
+							</a>
+						</button>	
+					<?php endif; ?>		
 				</div>
 			</div>
 		</div>
@@ -83,5 +95,3 @@
 		</form>
 	</div>
 </div>
-
-

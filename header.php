@@ -8,25 +8,36 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> >
 <head>
-    <title>Nutnull<?php wp_title(); ?></title>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutnull<?php wp_title(); ?></title>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
 
-    <?php if( is_singular() && pings_open( get_queried_object() ) ) : ?>
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <?php endif; ?>
-    
-    <?php wp_head(); ?>
+  <?php if( is_singular() && pings_open( get_queried_object() ) ) : ?>
+      <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+  <?php endif; ?>
+  
+  <?php wp_head(); ?>
 
-    <?php 
-      $custom_css = esc_attr(get_option('nutnull_css'));
-      if( !empty($custom_css)) :
-        echo '<style>'. $custom_css .'</style>';
-      endif;
-    ?>
+  <?php 
+    $custom_css = esc_attr(get_option('nutnull_css'));
+    if( !empty($custom_css)) :
+      echo '<style>'. $custom_css .'</style>';
+    endif;
+  ?>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZGJZ6DZQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YZGJZ6DZQ6');
+  </script>
+
 </head>
 
 <body <?php body_class(); ?>>

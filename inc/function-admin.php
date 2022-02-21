@@ -127,69 +127,72 @@ function nutnull_sidebar_options() {
     echo 'Customize our sidebar information';
 }
 
-// function for our forms inside the admin panel
+/*
+=========================================================== 
+    used for Adding our forms inside the admin panel 
+===========================================================
+*/
+function nutnull_sidebar_company_logo () {
+    $companyLogo = esc_attr(get_option('company_logo'));
 
-    function nutnull_sidebar_company_logo () {
-        $companyLogo = esc_attr(get_option('company_logo'));
-
-        if(empty($companyLogo)) {
-            echo '  
-                <input type="button" class="company_logo_uploader" value="Upload Company Logo" id="upload-button" />
-                <input type="hidden" id="company-logo" name="company_logo" value="" />
-            ';
-        } else {
-            echo '  
-                <input type="button" class="company_logo_uploader" value="Replace Company Logo" id="upload-button" />
-                <input type="hidden" id="company-logo" name="company_logo" value="'.$companyLogo.'" />
-                <input type="button" class="company_logo_uploader" value="Remove" id="remove-logo" />
-            ';
-        }
-        
-    }
-    // company details and information
-    function nutnull_sidebar_company_name() {
-        $companyName = esc_attr(get_option('company_name'));
-        echo '<input type="text" name="company_name" value="'.$companyName.'" placeholder="Company Name" />';
-    }
-    function nutnull_sidebar_company_address() {
-	    $companyAddress = esc_attr(get_option('company_address'));
-        echo '<textarea name="company_address">'.$companyAddress.'</textarea>';
-    }
-    function nutnull_sidebar_company_phone() {
-        $companyPhone = esc_attr(get_option('company_phone'));
-
-        echo '<input type="text" name="company_phone" value="'.$companyPhone.'" placeholder="Company Phone Number" />';
-    }
-    function nutnull_sidebar_company_email() {
-        $companyEmail = esc_attr(get_option('company_email'));
-
-        echo '<input type="text" name="company_email" value="'.$companyEmail.'" placeholder="Company Email" />';
-    }
-
-    // company social media
-    function nutnull_sidebar_company_twitter() {
-        $companyTwitter = esc_attr(get_option('company_twitter'));
-        echo '
-              <input type="text" name="company_twitter" value="'.$companyTwitter.'" placeholder="Company Name" />
-              <p class="description">Input your Twitter Account without @ character.</p>
+    if(empty($companyLogo)) {
+        echo '  
+            <input type="button" class="company_logo_uploader" value="Upload Company Logo" id="upload-button" />
+            <input type="hidden" id="company-logo" name="company_logo" value="" />
+        ';
+    } else {
+        echo '  
+            <input type="button" class="company_logo_uploader" value="Replace Company Logo" id="upload-button" />
+            <input type="hidden" id="company-logo" name="company_logo" value="'.$companyLogo.'" />
+            <input type="button" class="company_logo_uploader" value="Remove" id="remove-logo" />
         ';
     }
-    function nutnull_sidebar_company_facebook() {
-        $companyFacebook = esc_attr(get_option('company_facebook'));
+    
+}
 
-        echo '<input type="text" name="company_facebook" value="'.$companyFacebook.'" placeholder="Company Name" />';
-    }
-    function nutnull_sidebar_company_instagram() {
-        $companyInstagram = esc_attr(get_option('company_instagram'));
+// company details and information
+function nutnull_sidebar_company_name() {
+    $companyName = esc_attr(get_option('company_name'));
+    echo '<input type="text" name="company_name" value="'.$companyName.'" placeholder="Company Name" />';
+}
+function nutnull_sidebar_company_address() {
+    $companyAddress = esc_attr(get_option('company_address'));
+    echo '<textarea name="company_address">'.$companyAddress.'</textarea>';
+}
+function nutnull_sidebar_company_phone() {
+    $companyPhone = esc_attr(get_option('company_phone'));
 
-        echo '<input type="text" name="company_instagram" value="'.$companyInstagram.'" placeholder="Company Name" />';
-    }
-    function nutnull_sidebar_company_gmail() {
-        $companyGmail = esc_attr(get_option('company_gmail'));
+    echo '<input type="text" name="company_phone" value="'.$companyPhone.'" placeholder="Company Phone Number" />';
+}
+function nutnull_sidebar_company_email() {
+    $companyEmail = esc_attr(get_option('company_email'));
 
-        echo '<input type="text" name="company_gmail" value="'.$companyGmail.'" placeholder="Company Name" />';
-    }
+    echo '<input type="text" name="company_email" value="'.$companyEmail.'" placeholder="Company Email" />';
+}
 
+// company social media
+function nutnull_sidebar_company_twitter() {
+    $companyTwitter = esc_attr(get_option('company_twitter'));
+    echo '
+            <input type="text" name="company_twitter" value="'.$companyTwitter.'" placeholder="Company Name" />
+            <p class="description">Input your Twitter Account without @ character.</p>
+    ';
+}
+function nutnull_sidebar_company_facebook() {
+    $companyFacebook = esc_attr(get_option('company_facebook'));
+
+    echo '<input type="text" name="company_facebook" value="'.$companyFacebook.'" placeholder="Company Name" />';
+}
+function nutnull_sidebar_company_instagram() {
+    $companyInstagram = esc_attr(get_option('company_instagram'));
+
+    echo '<input type="text" name="company_instagram" value="'.$companyInstagram.'" placeholder="Company Name" />';
+}
+function nutnull_sidebar_company_gmail() {
+    $companyGmail = esc_attr(get_option('company_gmail'));
+
+    echo '<input type="text" name="company_gmail" value="'.$companyGmail.'" placeholder="Company Name" />';
+}
 
 /*
 =========================================================== 
