@@ -23,9 +23,6 @@ function nutnull_add_admin_page() {
 //initialization of the admin function
 add_action('admin_menu', 'nutnull_add_admin_page');
 
-//Activating custom Settings
-add_filter('admin_init', 'nutnull_custom_settings' );
-
 /*
 =========================================================== 
             used for Activating custom Settings 
@@ -106,7 +103,25 @@ function nutnull_custom_settings() {
     add_settings_section('nutnull-custom-css-section', 'Custom Css', 'nutnull_custom_css_section_callback', 'nutnull_theme_css');
 
     add_settings_field('custom-css', 'Insert your custom css', 'nutnull_custom_css_callback', 'nutnull_theme_css', 'nutnull-custom-css-section');
+   
 }
+//Activating custom Settings
+add_filter('admin_init', 'nutnull_custom_settings' );
+
+/*
+=========================================================== 
+        used for Adding the theme support for our theme 
+===========================================================
+*/
+function nutnull_featured_image_support(){
+
+    //used for our featured image
+    add_theme_support( 'post-thumbnails' );
+
+    //used for our post format
+    add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+}
+add_action( 'after_setup_theme', 'nutnull_featured_image_support' ); 
 
 function nutnull_sidebar_options() {
     echo 'Customize our sidebar information';
