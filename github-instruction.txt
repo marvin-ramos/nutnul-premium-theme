@@ -7,6 +7,7 @@ git remote add origin https://github.com/marvin-ramos/nutnul-premium-theme.git
 git push -u origin main
 
 //pushing the updated file in the repos
-git remote add origin https://github.com/marvin-ramos/nutnul-premium-theme.git
-git branch -M main
-git push -u origin main
+1. cd /project path
+2. git add *
+3. git commit -m "Enter commit message here"
+4. git push

@@ -31,5 +31,14 @@
             <?php the_excerpt(); ?>
         </div>
 
+        <div class="button-container">
+			<a href="<?php the_permalink(); ?>" class="btn btn-default"><?php _e( 'Read More' ); ?></a>
+		</div>
+
     </div>
+
+    <footer class="entry-footer">
+		<?php echo nutnull_posted_footer(); ?>
+	</footer>
+
 </article>
