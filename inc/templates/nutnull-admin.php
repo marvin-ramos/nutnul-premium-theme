@@ -31,35 +31,35 @@
 							</a>
 						</button>
 					<?php endif; ?>
-					<?php if( !empty( $companyEmail ) ): ?>
+					<?php if( !empty( $companyPhone ) ): ?>
 						<button class="btn-social-media-icon">
 							<a href="">
 								<i class="icofont-phone"></i>
 							</a>
 						</button>
 					<?php endif; ?>
-					<?php if( !empty( $companyEmail ) ): ?>
+					<?php if( !empty( $companyTwitter ) ): ?>
 						<button class="btn-social-media-icon">
 							<a href="">
 								<i class="icofont-twitter"></i>
 							</a>
 						</button>
 					<?php endif; ?>
-					<?php if( !empty( $companyEmail ) ): ?>
+					<?php if( !empty( $companyFacebook ) ): ?>
 						<button class="btn-social-media-icon">
 							<a href="">
 								<i class="icofont-facebook"></i>
 							</a>
 						</button>
 					<?php endif; ?>
-					<?php if( !empty( $companyEmail ) ): ?>
+					<?php if( !empty( $companyInstagram ) ): ?>
 						<button class="btn-social-media-icon">
 							<a href="">	
 								<i class="icofont-instagram"></i>
 							</a>
 						</button>
 					<?php endif; ?>
-					<?php if( !empty( $companyEmail ) ): ?>
+					<?php if( !empty( $companyGmail ) ): ?>
 						<button class="btn-social-media-icon">
 							<a href="">	
 								<i class="icofont-google-plus"></i>

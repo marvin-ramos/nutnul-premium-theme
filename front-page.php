@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<!-- ======= Hero Section ======= -->
+<div id="hero" class="d-flex align-items-center" style="background: url(<?php header_image(); ?>) top center;width: 100%;height: 100vh;background-size: cover;position: relative;">
+	<div class="container position-relative" data-aos-delay="500">
+	<h1><?php bloginfo('name'); ?></h1>
+	<h2><?php bloginfo('description'); ?></h2>
+	<a href="#about" class="btn-get-started scrollto">Get Started</a>
+	</div>
+</div>
+
 <main id="main">
 	<!-- ======= About Section ======= -->
 	<section id="about" class="about">
@@ -57,92 +66,77 @@
 	<!-- End About Section -->
 
 	<!-- ======= Clients Section ======= -->
-	<section id="clients" class="clients">
+    <section id="clients" class="clients">
+  
+      <div class="container" data-aos="zoom-in">  
 
-		<div class="container" data-aos="zoom-in"> 
+        <div class="row d-flex align-items-center">
+          
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
 
-			<div class="row d-flex align-items-center">
+              <div class="carousel-item active"> 
 
-				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
+                <div class="row d-flex align-items-center">
 
-					<div class="carousel-item active">
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-1a.png" class="img-fluid" alt="">
+                  </div>
+  
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-2.png" class="img-fluid" alt="">
+                  </div>
 
-						<div class="row d-flex align-items-center">
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-3.png" class="img-fluid" alt="">
+                  </div>
 
-							<?php
-								$args = array(
-									'post_type' => 'post',
-									'post_status' => 'publish',
-									'category_name' => 'clients',
-									'posts_per_page' => 4,
-								);
-								$arr_posts = new WP_Query( $args );
-									
-								if ( $arr_posts->have_posts() ) :
-									
-									while ( $arr_posts->have_posts() ) :
-										$arr_posts->the_post();
-										?>
-											<div id="post-<?php the_ID(); ?>" class="col-lg-3 col-md-3 col-12">
-												<?php if ( has_post_thumbnail() ) : ?>
-													<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id( $post->ID ), 'thumbnail' ); ?>" class="img-fluid" alt="">
-												<?php endif; ?>
-											</div>
-										<?php
-									endwhile;
-								endif;
-							?>
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-4.png" class="img-fluid" alt="">
+                  </div>
 
-						</div>
-					</div>
+                </div>
+              </div>
 
-					<div class="carousel-item">
-						<div class="row d-flex align-items-center">
+              <div class="carousel-item">
+                <div class="row d-flex align-items-center">
 
-							<?php
-								$args = array(
-									'post_type' => 'post',
-									'post_status' => 'publish',
-									'category_name' => 'clients',
-									'posts_per_page' => 4,
-								);
-								$arr_posts = new WP_Query( $args );
-									
-								if ( $arr_posts->have_posts() ) :
-									
-									while ( $arr_posts->have_posts() ) :
-										$arr_posts->the_post();
-										?>
-											<div id="post-<?php the_ID(); ?>" class="col-lg-3 col-md-3 col-12">
-												<?php if ( has_post_thumbnail() ) : ?>
-													<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id( $post->ID ), 'thumbnail' ); ?>" class="img-fluid" alt="">
-												<?php endif; ?>
-											</div>
-										<?php
-									endwhile;
-								endif;
-							?>
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-5.png" class="img-fluid" alt="">
+                  </div>
+  
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-6.png" class="img-fluid" alt="">
+                  </div>
 
-						</div>
-					</div>
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-7.png" class="img-fluid" alt="">
+                  </div>
 
-				</div>
-				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon fontIcon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
+                  <div class="col-lg-3 col-md-3 col-12">
+                    <img src="http://local.nutnull.com/wp-content/uploads/2022/02/client-8.png" class="img-fluid" alt="">
+                  </div>
 
-				<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-					<span class="carousel-control-next-icon fontIcon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
+                </div>
+              </div>
 
-			</div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon fontIcon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
 
-		</div>
-	</section>
-	<!-- End Clients Section -->
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon fontIcon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
 
 	<!-- ======= Services Section ======= -->
 	<section id="services" class="services">
@@ -214,13 +208,18 @@
 				<p>We are located in the heart of the city. Call us or visit us in our awesome office.</p>
 			</div>
 
+			<?php 
+				$companyAddress = esc_attr(get_option('company_address'));
+				$companyPhone = esc_attr(get_option('company_phone'));
+				$companyEmail = esc_attr(get_option('company_email'));
+			?>
+
 			<div class="row" data-aos="fade-up">
 				<div class="col-lg-6">
 					<div class="info-box mb-4">
 						<i class="bx bx-map"></i>
 						<h3>Our Address</h3>
-						<p>002 Salvani St. Soriano Subd.</p>
-						<p>Brgy. City Heights General Santos City</p>
+						<p><?php print $companyAddress; ?></p>
 					</div>
 				</div>
 
@@ -228,7 +227,7 @@
 					<div class="info-box  mb-4">
 						<i class="bx bx-envelope"></i>
 						<h3>Email Us</h3>
-						<p>info@nutnull.com</p>
+						<p><?php print $companyEmail; ?></p>
 					</div>
 				</div>
 
@@ -236,7 +235,7 @@
 					<div class="info-box  mb-4">
 						<i class="bx bx-phone-call"></i>
 						<h3>Call Us</h3>
-						<p>(+639) 17-715-2496</p>
+						<p><?php print $companyPhone; ?></p>
 					</div>
 				</div>
 

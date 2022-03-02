@@ -107,3 +107,9 @@ function nutnull_get_attachment(){
 	
 	return $output;
 }
+
+/*
+=========================================================== 
+            used for Activating our Blog loop 
+===========================================================
+*/

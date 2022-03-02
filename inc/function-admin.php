@@ -227,7 +227,10 @@ function nutnull_theme_options() {
 ===========================================================
 */
 function nutnull_contact_section() {
-    echo 'Activating and Deactivating Custom Contact Form';
+    echo '
+        <p>Use this <strong>SHORTCODE</strong> to activate the Contact Form inside a Page or a Post</p>
+        <p>Activating and Deactivating Custom Contact Form</p>
+    ';
 }
 function nutnull_activate_contact_form_field() {
     $options = get_option('activate_contact');
@@ -323,3 +326,9 @@ function nutnull_custom_css_callback() {
     $css = ( empty($css) ? '/*Nutnull Custom Css*/' : $css);
     echo '<div id="customCss">'.$css.'</div><textarea id="nutnull_css" name="nutnull_css" style="display:none;visible:hidden;">'.$css.'</textarea>';
 }
+
+/*
+=========================================================== 
+                used for our custom functions 
+===========================================================
+*/

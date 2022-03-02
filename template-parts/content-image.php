@@ -8,7 +8,7 @@
     */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'sunset-format-image' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'nutnull-format-image' ); ?>>
 	
 	<header class="entry-header text-center background-image" style="background-image: url(<?php echo nutnull_get_attachment(); ?>);">
 		
