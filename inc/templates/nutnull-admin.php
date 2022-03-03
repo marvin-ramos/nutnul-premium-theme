@@ -10,6 +10,7 @@
 	$companyFacebook = esc_attr(get_option('company_facebook'));
 	$companyInstagram = esc_attr(get_option('company_instagram'));
 	$companyGmail = esc_attr(get_option('company_gmail'));
+	$companyMap = esc_attr(get_option('company_map'));
 ?>
 
 <div class="nutnull-sidebar-preview">
@@ -84,6 +85,9 @@
 
 		<span>Company Email Address</span>
 		<h2 class="nutnull-company-email"><?php print $companyEmail; ?></h2>
+
+		<span>Company Map Address</span>
+		<iframe src="<?php print $companyMap; ?>" width="100%" height="384px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 	</div>
 
 	<div class="form-container">

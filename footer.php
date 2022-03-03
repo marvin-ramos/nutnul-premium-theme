@@ -16,11 +16,16 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-info">
                         <h3>NutNull</h3>
+                        <?php 
+                            $companyAddress = esc_attr(get_option('company_address'));
+                            $companyPhone = esc_attr(get_option('company_phone'));
+                            $companyEmail = esc_attr(get_option('company_email'));
+                            $companyMap = esc_attr(get_option('company_map'));
+                        ?>
                         <p>
-                            002 Salvani St. Soriano Subd. <br>
-                            Brgy. City Heights, General Santos City<br><br>
-                            <strong>Phone:</strong> (+639) 17-715-2496<br>
-                            <strong>Email:</strong> info@nutnull.com<br>
+                            <?php print $companyAddress; ?><br><br>
+                            <strong>Phone:</strong> <?php print $companyPhone; ?><br>
+                            <strong>Email:</strong> <?php print $companyEmail; ?><br>
                         </p>
                         <div class="social-links mt-3">
                             <a href="https://www.facebook.com/nutnull" target="blank" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -30,6 +35,14 @@
 
                 <div class="col-lg-2 col-md-6 footer-links">
                     <h4>Links</h4>
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'primary',
+                            'container' => false,
+                            'menu_class' => '',
+                            'walker' => new Nutnull_Walker_Nav_Primary()
+                        ) );
+                    ?>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>

@@ -70,5 +70,6 @@ function nutnull_load_scripts() {
 
     // for our custom js library
     wp_enqueue_script( 'nutnull', get_template_directory_uri() . '/js/nutnull.js', array('jquery'), '1.2.1', true );
+    wp_enqueue_script( 'nutnull_admin_js', get_template_directory_uri() . '/js/nutnull.admin.js', array(), '1.2.1', true );
 }
 add_action('wp_enqueue_scripts', 'nutnull_load_scripts');

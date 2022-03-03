@@ -43,6 +43,7 @@
 <body <?php body_class(); ?>>
 
   <?php 
+    $companyLogo = esc_attr(get_option('company_logo'));
     $companyPhone = esc_attr(get_option('company_phone'));
     $companyEmail = esc_attr(get_option('company_email'));
     $companyFacebook = esc_attr(get_option('company_facebook'));
@@ -60,10 +61,11 @@
       </div>
     </div>
   </div>
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-      <img src="http://local.nutnull.com/wp-content/uploads/2022/02/nutnull-logo.png" class="headerlogo" alt="">
+      <img src="<?php print $companyLogo; ?>" class="headerlogo" alt="">
       <img src="http://local.nutnull.com/wp-content/uploads/2022/02/nutnull-logo-modname2.png" class="namelogo mr-auto" alt="">
       
       <nav class="nav-menu d-none d-lg-block">

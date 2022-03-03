@@ -4,7 +4,7 @@
 */
 ?>
 
-<form id="nutnullContactForm" action="#" method="POST" class="php-email-form" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+<form id="nutnullContactForm" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
     <div class="form-row">
         <div class="col-md-6 form-group">
             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -29,6 +29,42 @@
         <div class="sent-message">Your message has been sent. Thank you!</div>
     </div>
     <div class="text-center">
-        <button type="submit" name="SubmitButton">Send Message</button>
+        <button type="submit" onclick="return save_contact_details();">Send Message</button>
     </div>
 </form>
+
+<script>
+    function save_contact_details() {
+
+        var form = $(this),
+            name = form.find('#name').val(),
+            email = form.find('#email').val(),
+            subject = form.find('#subject').val(),
+            message = form.find('#message').val(),
+            ajaxurl = form.data('url');
+
+            $.ajax({
+            
+            url : ajaxurl,
+            type : 'post',
+            data : {
+                name : name,
+                email : email,
+                subject : subject,
+                message : message,
+                action: 'nutnull_save_user_contact_form'
+            },
+            error : function( response ){
+                console.log(response);
+            },
+            success : function( response ){
+                if(response == 0) {
+                    console.log('unable to save in database');
+                } else {
+                    console.log('record save');
+                }
+            }
+            
+        });
+    }
+</script>

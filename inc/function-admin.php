@@ -49,6 +49,9 @@ function nutnull_custom_settings() {
     register_setting( 'nutnull-settings-group', 'company_instagram', 'nutnull_sanitize_instagram' );
     register_setting( 'nutnull-settings-group', 'company_gmail', 'nutnull_sanitize_gmail' );
 
+    // for our company map
+    register_setting( 'nutnull-settings-group', 'company_map', 'nutnull_sanitize_map' );
+
     add_settings_section( 'nutnull-sidebar-options', 'Sidebar Option', 'nutnull_sidebar_options', 'nutnull_theme');
 
     //for media/logo uploader 
@@ -66,6 +69,8 @@ function nutnull_custom_settings() {
     add_settings_field( 'sidebar-instagram', 'Instagram handler', 'nutnull_sidebar_company_instagram', 'nutnull_theme', 'nutnull-sidebar-options');
     add_settings_field( 'sidebar-gmail', 'Gmail handler', 'nutnull_sidebar_company_gmail', 'nutnull_theme', 'nutnull-sidebar-options');
     
+    // for our company map
+    add_settings_field( 'sidebar-map', 'Map handler', 'nutnull_sidebar_company_map', 'nutnull_theme', 'nutnull-sidebar-options');
     /*
     =========================================================== 
                   used for general options function 
@@ -192,6 +197,13 @@ function nutnull_sidebar_company_gmail() {
     $companyGmail = esc_attr(get_option('company_gmail'));
 
     echo '<input type="text" name="company_gmail" value="'.$companyGmail.'" placeholder="Company Name" />';
+}
+
+// for our company map
+function nutnull_sidebar_company_map() {
+    $companyMap = esc_attr(get_option('company_map'));
+
+    echo '<input type="text" name="company_map" value="'.$companyMap.'" placeholder="Company Map" />';
 }
 
 /*
@@ -332,3 +344,7 @@ function nutnull_custom_css_callback() {
                 used for our custom functions 
 ===========================================================
 */
+function nutnull_post_excerpt_length( $length ) {
+    return 60;
+}
+add_filter( 'excerpt_length', 'nutnull_post_excerpt_length', 999 );
