@@ -4,23 +4,23 @@
 */
 ?>
 
-<form id="nutnullContactForm" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+<form id="nutnullContactForm" action="#" method="POST" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
     <div class="form-row">
         <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+            <input type="text" name="nutnull-contact-name" class="form-control" id="nutnull-contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
             <div class="validate"></div>
         </div>
         <div class="col-md-6 form-group">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+            <input type="email" class="form-control" name="nutnull-contact-email" id="nutnull-contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
             <div class="validate"></div>
         </div>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+        <input type="text" class="form-control" name="nutnull-contact-subject" id="nutnull-contact-subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
         <div class="validate"></div>
     </div>
     <div class="form-group">
-        <textarea class="form-control" id="message" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+        <textarea class="form-control" id="nutnull-contact-message" name="nutnull-contact-message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
         <div class="validate"></div>
     </div>
     <div class="mb-3">
@@ -29,42 +29,6 @@
         <div class="sent-message">Your message has been sent. Thank you!</div>
     </div>
     <div class="text-center">
-        <button type="submit" onclick="return save_contact_details();">Send Message</button>
+        <button type="submit">Send Message</button>
     </div>
 </form>
-
-<script>
-    function save_contact_details() {
-
-        var form = $(this),
-            name = form.find('#name').val(),
-            email = form.find('#email').val(),
-            subject = form.find('#subject').val(),
-            message = form.find('#message').val(),
-            ajaxurl = form.data('url');
-
-            $.ajax({
-            
-            url : ajaxurl,
-            type : 'post',
-            data : {
-                name : name,
-                email : email,
-                subject : subject,
-                message : message,
-                action: 'nutnull_save_user_contact_form'
-            },
-            error : function( response ){
-                console.log(response);
-            },
-            success : function( response ){
-                if(response == 0) {
-                    console.log('unable to save in database');
-                } else {
-                    console.log('record save');
-                }
-            }
-            
-        });
-    }
-</script>

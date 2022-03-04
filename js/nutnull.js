@@ -193,5 +193,47 @@
     $(window).on('load', function() {
       aos_init();
     });
-    
+
+    //for our contact forms functionality
+    $(document).ready(function() {
+      $('#nutnullContactForm').on('submit', function(event) {
+
+        // console.log('form submitted');
+
+        var form = $(this),
+            subject = form.find('#nutnull-contact-subject').val(),
+            message = form.find('#nutnull-contact-message').val(),
+            fullname = form.find('#nutnull-contact-name').val(),
+            email = form.find('#nutnull-contact-email').val(),
+            ajaxurl = form.data('url');
+
+            // console.log(form);
+            // console.log(subject);
+            // console.log(message);
+            // console.log(fullname);
+            // console.log(email);
+            // console.log(ajaxurl);
+
+        $.ajax({
+          url: ajaxurl,
+          type: 'post',
+          data: {
+            subject: subject,
+            message: message,
+            fullname: fullname,
+            email: email,
+            action: 'nutnull_save_user_contact_form'
+          },
+          error: function() {
+            console.log('some error');
+          },
+          success: function() {
+            console.log('sulod');
+          }
+        });
+
+        event.preventDefault();
+
+      });
+    });
   })(jQuery);
