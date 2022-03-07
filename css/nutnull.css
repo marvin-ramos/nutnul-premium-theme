@@ -2597,7 +2597,16 @@ body {
     }
 }
 
-/* for testing */
+/* for form validation functionality */
 /* * {
 	border: 1px solid red;
 } */
+.form-control-msg {
+	display: none;
+}
+.has-error .form-control-msg {
+	display: block;
+}
+.js-show-feedback {
+	display: block;
+}

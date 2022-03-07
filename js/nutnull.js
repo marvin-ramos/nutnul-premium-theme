@@ -4,6 +4,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 !(function($) {
     "use strict";
   
@@ -198,21 +199,63 @@
     $(document).ready(function() {
       $('#nutnullContactForm').on('submit', function(event) {
 
-        // console.log('form submitted');
+        // for data validation functionality
+        event.preventDefault();
+        $('.has-error').removeClass('has-error');
+        $('.js-show-feedback').removeClass('js-show-feedback');
 
         var form = $(this),
-            subject = form.find('#nutnull-contact-subject').val(),
-            message = form.find('#nutnull-contact-message').val(),
-            fullname = form.find('#nutnull-contact-name').val(),
-            email = form.find('#nutnull-contact-email').val(),
-            ajaxurl = form.data('url');
+          subject = form.find('#nutnull-contact-subject').val(),
+          message = form.find('#nutnull-contact-message').val(),
+          fullname = form.find('#nutnull-contact-fullname').val(),
+          email = form.find('#nutnull-contact-email').val(),
+          ajaxurl = form.data('url');
 
-            // console.log(form);
-            // console.log(subject);
-            // console.log(message);
-            // console.log(fullname);
-            // console.log(email);
-            // console.log(ajaxurl);
+        // for fullname data validation functionality
+        var fullnameLenght = fullname.length;
+        if( fullname === '' ){
+          $('#nutnull-contact-fullname').parent('.form-group').addClass('has-error');
+          $("#form-control-fullname").html("Name is Required");
+          return;
+        } else if ( fullnameLenght < 4 ) {
+          $('#nutnull-contact-fullname').parent('.form-group').addClass('has-error');
+          $("#form-control-fullname").html("Please Enter atleast 4 Characters");
+          return;
+        }
+
+        // for email data validation functionality
+        if( email === '' ){
+          $('#nutnull-contact-email').parent('.form-group').addClass('has-error');
+          $("#form-control-email").html("Email is Required");
+          return;
+        } 
+
+        // for subject data validation functionality
+        var subjectLenght = subject.length;
+        if( subject === '' ){
+          $('#nutnull-contact-subject').parent('.form-group').addClass('has-error');
+          $("#form-control-subject").html("Subject is Required");
+          return;
+        } else if ( subjectLenght < 8 ) {
+          $('#nutnull-contact-subject').parent('.form-group').addClass('has-error');
+          $("#form-control-subject").html("Please Enter atleast 8 Characters");
+          return;
+        }         
+        
+        // for message data validation functionality
+        var messageLenght = message.length;
+        if( message === '' ){
+          $('#nutnull-contact-message').parent('.form-group').addClass('has-error');
+          $("#form-control-message").html("Please write something for us");
+          return;
+        } else if ( messageLenght < 10 ) {
+          $('#nutnull-contact-message').parent('.form-group').addClass('has-error');
+          $("#form-control-message").html("Please Enter atleast 10 Characters");
+          return;
+        } 
+        
+        form.find('input, button, textarea').attr('disabled','disabled');
+        $('.js-form-submission').addClass('js-show-feedback');
 
         $.ajax({
           url: ajaxurl,
@@ -225,15 +268,47 @@
             action: 'nutnull_save_user_contact_form'
           },
           error: function() {
-            console.log('some error');
+
+            // console.log(response);
+            $('.js-show-submission').removeClass('js-show-feedback');
+            document.getElementById("submission-form").style.display = "none";
+            $('.js-form-error').addClass('js-show-feedback');
+            form.find('input, button, textarea').removeAttr('disabled');
+
           },
-          success: function() {
-            console.log('sulod');
+          success: function(response) {
+
+            // console.log(response);
+
+            if( response == 0 ){
+              setTimeout(function(){
+                $('.js-show-submission').removeClass('js-show-feedback');
+                document.getElementById("submission-form").style.display = "none";
+                $('.js-form-error').addClass('js-show-feedback');
+                form.find('input, button, textarea').removeAttr('disabled');
+              }, 1500);
+            } else {
+              const inputs = document.querySelectorAll('#nutnull-contact-fullname, #nutnull-contact-email, #nutnull-contact-subject ,#nutnull-contact-message');
+
+              setTimeout(function(){
+
+                $('.js-show-submission').removeClass('js-show-feedback');
+                document.getElementById("submission-form").style.display = "none";
+
+                inputs.forEach(input => {
+                  input.value = '';
+                });
+                
+                $('.js-form-success').addClass('js-show-feedback');
+                form.find('input, button, textarea').removeAttr('disabled');
+
+              }, 1500);
+
+            }
           }
         });
 
-        event.preventDefault();
-
       });
     });
-  })(jQuery);
+    
+})(jQuery);
