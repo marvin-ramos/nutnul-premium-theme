@@ -11,3 +11,8 @@ git push -u origin main
 2. git add *
 3. git commit -m "Enter commit message here"
 4. git push
+
+//composer change local directory 
+1. Right click on start up(windows logo)->system ->Advance system settings->Environment variables->System variables[below box] ->select Path and click Edit
+2. Click New and add this value C:\ProgramData\ComposerSetup\bin
+3. Now open your terminal [cmd] and test composer --version

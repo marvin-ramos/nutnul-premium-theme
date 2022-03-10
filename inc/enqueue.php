@@ -67,6 +67,7 @@ function nutnull_load_scripts() {
     wp_enqueue_script('venoboxjs', get_template_directory_uri() . '/assets/vendor/venobox/venobox.min.js', array(), '1.0.0', true);
     wp_enqueue_script('carouseljs', get_template_directory_uri() . '/assets/vendor/owl.carousel/owl.carousel.min.js', array(), '1.0.0', true);
     wp_enqueue_script('aosjs', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array(), '1.0.0', true);
+    wp_enqueue_script( 'sweetalert', get_template_directory_uri() . '/js/sweetalert.min.js', array(), '2.0.0', true );
 
     // for our custom js library
     wp_enqueue_script( 'nutnull', get_template_directory_uri() . '/js/nutnull.js', array('jquery'), '1.2.1', true );

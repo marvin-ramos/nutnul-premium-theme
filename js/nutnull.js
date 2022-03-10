@@ -284,7 +284,14 @@
               setTimeout(function(){
                 $('.js-show-submission').removeClass('js-show-feedback');
                 document.getElementById("submission-form").style.display = "none";
-                $('.js-form-error').addClass('js-show-feedback');
+                
+                // $('.js-form-error').addClass('js-show-feedback');
+                Swal.fire({
+                  title: 'Error',
+                  text: 'Opps please try again.',
+                  icon: 'error',
+                  confirmButtonText: 'Try Again'
+                })
                 form.find('input, button, textarea').removeAttr('disabled');
               }, 1500);
             } else {
@@ -295,11 +302,16 @@
                 $('.js-show-submission').removeClass('js-show-feedback');
                 document.getElementById("submission-form").style.display = "none";
 
+                // $('.js-form-success').addClass('js-show-feedback');
+                Swal.fire({
+                  title: 'Success',
+                  text: 'Your message has been sent. Thank you!',
+                  icon: 'success',
+                  confirmButtonText: 'OK'
+                })
                 inputs.forEach(input => {
                   input.value = '';
                 });
-                
-                $('.js-form-success').addClass('js-show-feedback');
                 form.find('input, button, textarea').removeAttr('disabled');
 
               }, 1500);

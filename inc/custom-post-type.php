@@ -165,3 +165,19 @@ function nutnull_save_contact_fullname_data( $post_id ) {
 	
 	update_post_meta( $post_id, '_contact_fullname_value_key', $my_data );
 }
+
+/*
+=========================================================== 
+            used for our SMTP functionality 
+===========================================================
+*/
+// function mailtrap($phpmailer) {
+// 	$phpmailer->isSMTP();
+// 	$phpmailer->Host = 'smtp.mailtrap.io';
+// 	$phpmailer->SMTPAuth = true;
+// 	$phpmailer->Port = 2525;
+// 	$phpmailer->Username = 'df58c26cfe62b2';
+// 	$phpmailer->Password = '3edb3a3356d353';
+// }
+
+// add_action('phpmailer_init', 'mailtrap');

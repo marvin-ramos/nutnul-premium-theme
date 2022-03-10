@@ -25,8 +25,8 @@
     </div>
     <div class="mb-3">
         <small class="text-info form-control-msg js-form-submission" id="submission-form">Loading, please wait...</small>
-        <small class="text-success form-control-msg js-form-success">Your message has been sent. Thank you!</small>
-        <small class="text-danger form-control-msg js-form-error">Opps please try again.</small>
+        <!-- <small class="text-success form-control-msg js-form-success"></small> -->
+        <!-- <small class="text-danger form-control-msg js-form-error">Opps please try again.</small> -->
     </div>
     <div class="text-center">
         <button type="submit">Send Message</button>
